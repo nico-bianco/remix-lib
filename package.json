@@ -23,22 +23,7 @@
     "events": "^3.0.0",
     "fast-async": "^6.1.2",
     "solc": "^0.5.0",
-    "web3": "git+ssh://git@github.com:input-output-hk/midnight-web3.git"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-es2015": "latest",
-    "@babel/preset-es2017": "latest",
-    "@babel/preset-stage-0": "^7.0.0",
-    "babel-eslint": "^7.1.1",
-    "babelify": "^10.0.0",
-    "standard": "^7.0.1",
-    "tape": "^4.6.0"
-  },
-  "scripts": {
-    "test": "standard && tape ./test/tests.js"
+    "web3": "git+ssh://git@github.com:input-output-hk/midnight-web3.git#pm-749-Update-call-transactions-to-allow-deploying-and-interacting-with-contracts"
   },
   "repository": {
     "type": "git",
@@ -57,37 +42,5 @@
       "test/resources/*"
     ],
     "parser": "babel-eslint"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "plugins": [
-            [
-              "fast-async",
-              {
-                "runtimePatten": null,
-                "compiler": {
-                  "promises": true,
-                  "es7": true,
-                  "noRuntime": true,
-                  "wrapAwait": true
-                }
-              }
-            ],
-            "module:@babel/plugin-transform-object-assign"
-          ]
-        }
-      ],
-      [
-        "babelify",
-        {
-          "presets": [
-            "@babel/preset-env"
-          ]
-        }
-      ]
-    ]
   }
 }
